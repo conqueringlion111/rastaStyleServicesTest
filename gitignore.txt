@@ -3,3 +3,4 @@
 /bin
 *.png
 /ant_reports
+.settings/org.eclipse.core.resources.prefs
