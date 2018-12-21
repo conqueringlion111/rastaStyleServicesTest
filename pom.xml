@@ -77,8 +77,6 @@
 										<!-- Report file name -->
 										<include>emailable-report.html</include>
 									</includes>
-									<!-- Use Regular Expressions like **/*.html if you want all the 
-										html files to send -->
 								</fileSet>
 							</fileSets>
 						</configuration>
