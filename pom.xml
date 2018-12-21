@@ -23,6 +23,7 @@
 						<!-- TestNG suite XML files -->
 						<suiteXmlFile>RestAPITestSuite.xml</suiteXmlFile>
 						<!-- <suiteXmlFile>${suiteFile}</suiteXmlFile> -->
+						<suiteXmlFile>OtherAPITestSuite.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<testErrorIgnore>false</testErrorIgnore>
 					<testFailureIgnore>false</testFailureIgnore>
