@@ -1,0 +1,5 @@
+/ant_build
+/test-output
+/bin
+*.png
+/ant_reports
