@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Rest API Test Suite" parallel="tests" thread-count="6">
+    <test name="API test run group 1" preserve-order="true">
+        <classes>
+        	<class name="com.APITest.tests.SampleAPITests"/>	     		
+        </classes>
+    </test>
+    <test name="API test run group 2" preserve-order="true">
+        <classes>
+        	<class name="com.APITest.tests.SamplePostRequest"/>  		
+        </classes>
+    </test>
+  </suite>

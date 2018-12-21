@@ -1,0 +1,15 @@
+{
+	"s200_RegisterTokenReturned"		:
+	[
+		{		
+			"containsStr1"		:	"token"
+		}
+	],
+	
+	"s400_MissingEmailField_ErrorReturned"	:
+	[
+		{
+			"errVal1"			:	"Missing password"
+		}
+	]
+}	

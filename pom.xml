@@ -1,0 +1,177 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.mavrj.automation</groupId>
+	<artifactId>restapi-automation</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>restapi-automation</name>
+	<description>rest api test automation project using rest assured, testng, maven</description>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<build>
+		<plugins>
+			<!-- Surefire plugin to run xml files -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.20</version>
+				<configuration>
+					<forkCount>0</forkCount>
+					<suiteXmlFiles>
+						<!-- TestNG suite XML files -->
+						<suiteXmlFile>RestAPITestSuite.xml</suiteXmlFile>
+						<!-- <suiteXmlFile>${suiteFile}</suiteXmlFile> -->
+					</suiteXmlFiles>
+					<testErrorIgnore>false</testErrorIgnore>
+					<testFailureIgnore>false</testFailureIgnore>
+				</configuration>
+			</plugin>
+			<!-- Post-Man plugin -->
+			<plugin>
+				<groupId>ch.fortysix</groupId>
+				<artifactId>maven-postman-plugin</artifactId>
+				<version>0.1.6</version>
+				<executions>
+					<execution>
+						<id>Report Generation</id>
+						<phase>test</phase>
+						<goals>
+							<goal>send-mail</goal>
+						</goals>
+						<inherited>false</inherited>
+						<configuration>
+							<!-- From Email address -->
+							<from>syntester0077@gmail.com</from>
+							<!-- Email subject -->
+							<subject>Test Report</subject>
+							<!-- Fail the build if the mail doesnt reach -->
+							<failonerror>false</failonerror>
+							<htmlMessage>
+								<![CDATA[
+								<p>New test build triggered.</p>
+								<p>Attached html file contains the test results</p>
+								]]>
+							</htmlMessage>
+							<!-- host -->
+							<mailhost>smtp.gmail.com</mailhost>
+							<!-- port of the host -->
+							<mailport>465</mailport>
+							<mailssl>true</mailssl>
+							<mailAltConfig>true</mailAltConfig>
+							<!-- Email Authentication(USername and Password) -->
+							<mailuser>syntester0077@gmail.com</mailuser>
+							<mailpassword>rud3bw0y123</mailpassword>
+							<receivers>
+								<!-- To Email address -->
+								<receiver>synhlee@yahoo.com</receiver>
+								<receiver>synhlee@gmail.com</receiver>
+							</receivers>
+							<fileSets>
+								<fileSet>
+									<!-- Report directory Path -->
+									<directory>${basedir}/target/surefire-reports</directory>
+									<includes>
+										<!-- Report file name -->
+										<include>emailable-report.html</include>
+									</includes>
+									<!-- Use Regular Expressions like **/*.html if you want all the 
+										html files to send -->
+								</fileSet>
+							</fileSets>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>3.141.59</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.14.3</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>javax.mail-api</artifactId>
+			<version>1.5.4</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>3.2.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/groovy/groovy-all -->
+		<dependency>
+			<groupId>groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.5</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hamcrest/java-hamcrest -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>java-hamcrest</artifactId>
+			<version>2.0.0.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-path</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+
+	</dependencies>
+</project>

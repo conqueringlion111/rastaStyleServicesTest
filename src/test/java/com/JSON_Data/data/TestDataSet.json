@@ -1,0 +1,75 @@
+{
+	"verifySubmitEmailField"		:
+	[
+		{		
+			"month"		:	"January"
+		},
+		
+		{		
+			"month"		:	"February"
+		},
+		
+		{		
+			"month"		:	"April"
+		}
+	],
+	
+	"isEmailSubmissionSuccessful"	:
+	[
+		{
+			"month"			:	"January",
+			"email"			:	"testing@123.com",
+			"message"		:	"Thanks! We will notify you of our new shoes at this email:"
+		},
+		
+		{
+			"month"			:	"June",
+			"email"			:	"abcd@1123.com",
+			"message"		:	"Thanks! We will notify you of our new shoes at this email:"
+		}
+			
+	],
+	
+	"isHomeEmailSubmissionSuccessful"	:
+	[
+		{
+			"email"			:	"abcd@1123.com",
+			"message"		:	"Thanks! We will notify you of our new shoes at this email:"
+		}
+	],
+	
+	"isShoeBlurbAvailable"	:
+	[
+		{
+			"month"			:	"January"
+		},
+		
+		{
+			"month"			:	"December"
+		}		
+	],
+	
+	"isShoePriceAvailable"	:
+	[
+		{
+			"month"			:	"January"
+		},
+		
+		{
+			"month"			:	"December"
+		}		
+	],
+	
+	"isShoePictureAvailable"	:
+	[
+		{
+			"month"			:	"January"
+		},
+		
+		{
+			"month"			:	"December"
+		}		
+	]
+	
+	
+}
