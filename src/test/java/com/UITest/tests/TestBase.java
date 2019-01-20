@@ -9,6 +9,7 @@ import java.net.MalformedURLException;
 import java.text.ParseException;
 import java.util.Properties;
 
+import org.apache.commons.exec.OS;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -112,7 +113,15 @@ public class TestBase {
 						try{
 							TakesScreenshot screenshot = (TakesScreenshot)driver;
 							File srs = screenshot.getScreenshotAs(OutputType.FILE);
-							FileUtils.copyFile(srs, new File(".\\printscreen\\failureprintscreen"+result.getName()+".png"));
+							
+							String osName = System.getProperty("os.name");
+							System.out.println(System.getProperty("os.name"));				
+							if(osName.contains("Windows")) {
+								FileUtils.copyFile(srs, new File(".\\printscreen\\failureprintscreen"+result.getName()+".png"));								
+							}
+							else {
+								FileUtils.copyFile(srs, new File("printscreen//failureprintscreen"+result.getName()+".png"));
+							}
 							System.out.println("Successfully captured a screenshot");
 						}catch (Exception e){
 							System.out.println("Exception while taking screenshot "+e.getMessage());
