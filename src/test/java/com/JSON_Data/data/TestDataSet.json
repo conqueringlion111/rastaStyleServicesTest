@@ -1,75 +1,33 @@
 {
-	"verifySubmitEmailField"		:
+	"loginTest"	:
 	[
-		{		
-			"month"		:	"January"
-		},
-		
-		{		
-			"month"		:	"February"
-		},
-		
-		{		
-			"month"		:	"April"
+		{
+			"username"			:			"automationtest@sumoscheduler.com",
+			"password"			:			"mypassword1"
 		}
-	],
-	
-	"isEmailSubmissionSuccessful"	:
+	],	
+	"verifyNewAppointmentCanBeCreatedSuccessfully"	:
 	[
 		{
-			"month"			:	"January",
-			"email"			:	"testing@123.com",
-			"message"		:	"Thanks! We will notify you of our new shoes at this email:"
+			"username"				:			"automationtest@sumoscheduler.com",
+			"password"				:			"mypassword1",
+			"serviceType"			:			"New Service",
+			"location"				:			"Delhi",
+			"addPartipntVal"		:			"Provider",
+			"addPartipntSelect"		:			"Umakant Provider - upro121@yopmail.com",
+			"addartifntVal2"		:			"Lead",
+			"addPartipntSelect2"	:			"Amber Lead - aderemiah@sumoscheduler.com"
 		},
-		
 		{
-			"month"			:	"June",
-			"email"			:	"abcd@1123.com",
-			"message"		:	"Thanks! We will notify you of our new shoes at this email:"
-		}
-			
-	],
-	
-	"isHomeEmailSubmissionSuccessful"	:
-	[
-		{
-			"email"			:	"abcd@1123.com",
-			"message"		:	"Thanks! We will notify you of our new shoes at this email:"
-		}
-	],
-	
-	"isShoeBlurbAvailable"	:
-	[
-		{
-			"month"			:	"January"
-		},
-		
-		{
-			"month"			:	"December"
-		}		
-	],
-	
-	"isShoePriceAvailable"	:
-	[
-		{
-			"month"			:	"January"
-		},
-		
-		{
-			"month"			:	"December"
-		}		
-	],
-	
-	"isShoePictureAvailable"	:
-	[
-		{
-			"month"			:	"January"
-		},
-		
-		{
-			"month"			:	"December"
+			"username"				:			"automationtest@sumoscheduler.com",
+			"password"				:			"mypassword1",
+			"serviceType"			:			"New Service",
+			"location"				:			"Delhi",
+			"addPartipntVal"		:			"Provider",
+			"addPartipntSelect"		:			"Umakant Provider - upro121@yopmail.com",
+			"addartifntVal2"		:			"Lead",
+			"addPartipntSelect2"	:			"Amber Lead - aderemiah@sumoscheduler.com"
 		}		
 	]
-	
 	
 }
