@@ -222,29 +222,27 @@ public class WebDriverHelper {
 						DesiredCapabilities capability = DesiredCapabilities.chrome();
 						ChromeOptions options = new ChromeOptions();
 						capability.setBrowserName("chrome");
-						 options.addArguments("--window-size=1560,1070");
+						options.addArguments("--window-size=1560,1070");
 						capability.setPlatform(Platform.ANY);
 						driver = new ChromeDriver(capability);
 					}
 					else if(browserRemote.equalsIgnoreCase("chromeRemoteHeadless")) {
-						System.out.println("Opening Chrome Driver");	
-						WebDriverManager.chromedriver().setup();
-						DesiredCapabilities capability = DesiredCapabilities.chrome();
-						ChromeOptions options = new ChromeOptions();
-						capability.setBrowserName("chrome");
-						options.addArguments("--headless");
-						options.addArguments("--window-size=1840,990");
-						capability.setPlatform(Platform.ANY);
-						driver = new ChromeDriver(capability);
+						WebDriverManager.chromedriver().setup();				
+					 	DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+			            ChromeOptions options = new ChromeOptions();
+			            capabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);			            			         
+			            options.addArguments("--headless");
+			            options.addArguments("--window-size=1840,990");
+			            capabilities.setCapability(ChromeOptions.CAPABILITY, options);		            
+			            driver = new ChromeDriver(capabilities);
 					}
 					else if(browserRemote.equalsIgnoreCase("firefoxRemote")) {
-						System.out.println("Opening FireFox Driver");					
-						DesiredCapabilities capability = DesiredCapabilities.firefox();
-						capability.setBrowserName("internetExplorer");
-						FirefoxOptions options = new FirefoxOptions();
-				        options.addArguments("--window-size=1560,1070");
-						capability.setPlatform(Platform.ANY);
-						driver = new FirefoxDriver(capability);
+						WebDriverManager.firefoxdriver().setup();
+						DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+					    capabilities.setCapability("marionette",true);
+					    FirefoxOptions options = new FirefoxOptions();
+					    options.addArguments("--window-size=1560,1070");
+						driver = new FirefoxDriver(capabilities);
 					}
 					else if(browserRemote.equalsIgnoreCase("firefoxRemoteHeadless")) {						
 						WebDriverManager.firefoxdriver().setup();

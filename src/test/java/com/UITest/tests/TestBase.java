@@ -120,7 +120,7 @@ public class TestBase {
 								FileUtils.copyFile(srs, new File(".\\printscreen\\failureprintscreen"+result.getName()+".png"));								
 							}
 							else {
-								FileUtils.copyFile(srs, new File("printscreen//failureprintscreen"+result.getName()+".png"));
+								FileUtils.copyFile(srs, new File("printscreen/failureprintscreen"+result.getName()+".png"));
 							}
 							System.out.println("Successfully captured a screenshot");
 						}catch (Exception e){
