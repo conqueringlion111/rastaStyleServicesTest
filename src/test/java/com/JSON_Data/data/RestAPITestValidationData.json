@@ -11,5 +11,16 @@
 		{
 			"errVal1"			:	"Missing password"
 		}
+	],
+	
+	"login_Auth_GetCookies_Run_GET"	:
+	[
+	
+		{
+			"myNewURI"			:			"https://staging.mysite.com.io",
+			"searchPath"		:			"/lookup/detail/all/search",
+			"loginPath"			:			"/login"
+		}
+	
 	]
 }	
