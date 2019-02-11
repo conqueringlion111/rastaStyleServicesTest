@@ -68,7 +68,7 @@ public class SampleAPITests extends APITestBase {
 		for (String cookie: allCookies.keySet()) {
 			String key = cookie.toString();
 			String value = allCookies.get(cookie).toString();
-			System.out.println("Here are the cookie - key val pair " + key + " " + value);
+			System.out.println("Here are the cookie(s) - key/val pair: " + key + " " + value);
 		}
 		int code = response.getStatusCode();
 		String lon, lat;
@@ -103,6 +103,14 @@ public class SampleAPITests extends APITestBase {
 				.contentType(ContentType.JSON)
 				.extract()
 				.response();
+		
+		//get the cookie
+				Map<String, String> allCookies = response.getCookies();
+				for (String cookie: allCookies.keySet()) {
+					String key = cookie.toString();
+					String value = allCookies.get(cookie).toString();
+					System.out.println("Here are the cookie(s) - key val pair " + key + " " + value);
+				}
 		
 		Assert.assertTrue(response.getTimeIn(TimeUnit.SECONDS) <= timeLimitInt, "Response Time is not within limit");
 		System.out.println("The total response time is " + response.getTimeIn(TimeUnit.SECONDS) + " seconds");

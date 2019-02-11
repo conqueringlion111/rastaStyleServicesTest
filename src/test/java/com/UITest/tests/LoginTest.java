@@ -2,6 +2,8 @@ package com.UITest.tests;
 
 import org.testng.annotations.Test;
 
+import com.UITest.testbase.TestBase;
+
 public class LoginTest extends TestBase {
 	
 	@Test(dataProvider = "dataProvider", description = "simple test to assert successful login")

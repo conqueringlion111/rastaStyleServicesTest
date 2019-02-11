@@ -1,4 +1,4 @@
-package com.UITest.tests;
+package com.UITest.testbase;
 
 import java.io.File;
 import java.io.FileInputStream;

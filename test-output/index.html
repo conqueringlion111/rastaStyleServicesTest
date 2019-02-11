@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Rastamon\AppData\Local\Temp\testng-eclipse-1411206956\testng-customsuite.xml</span>
+                    <span>C:\Users\Rastamon\AppData\Local\Temp\testng-eclipse-2050468143\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,12 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.UITest.tests.LoginTest" hash-for-method="loginTest(automationtest@sumoscheduler.com, mypassword1)">loginTest(automationtest@sumoscheduler.com, mypassword1)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.APITest.tests.SampleAPITests" hash-for-method="s200_Get_PComments">s200_Get_PComments</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.APITest.tests.SampleAPITests" hash-for-method="s200_Get_WeatherInfoByZipcode">s200_Get_WeatherInfoByZipcode</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -120,17 +125,25 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.UITest.tests.LoginTest</span>
+              <span class="class-name">com.APITest.tests.SampleAPITests</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="loginTest(automationtest@sumoscheduler.com, mypassword1)">
-                  </a> <!-- loginTest(automationtest@sumoscheduler.com, mypassword1) -->
-                  <span class="method-name">loginTest</span>
-                  <span class="parameters">(automationtest@sumoscheduler.com, mypassword1)</span>
+                  <a name="s200_Get_PComments">
+                  </a> <!-- s200_Get_PComments -->
+                  <span class="method-name">s200_Get_PComments</span>
                   <em>
-(simple test to assert successful login)                  </em>
+(simple get call to test this framework)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="s200_Get_WeatherInfoByZipcode">
+                  </a> <!-- s200_Get_WeatherInfoByZipcode -->
+                  <span class="method-name">s200_Get_WeatherInfoByZipcode</span>
+                  <em>
+(simple get call to validate the required fields are included in the response body)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -138,7 +151,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Rastamon\AppData\Local\Temp\testng-eclipse-1411206956\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Rastamon\AppData\Local\Temp\testng-eclipse-2050468143\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -147,7 +160,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.UITest.tests.LoginTest&quot;/&gt;
+      &lt;class name=&quot;com.APITest.tests.SampleAPITests&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -187,16 +200,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'loginTest')
-data.setCell(0, 2, 'com.UITest.tests.LoginTest')
-data.setCell(0, 3, 7158);
+data.setCell(0, 1, 's200_Get_PComments')
+data.setCell(0, 2, 'com.APITest.tests.SampleAPITests')
+data.setCell(0, 3, 3710);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 's200_Get_WeatherInfoByZipcode')
+data.setCell(1, 2, 'com.APITest.tests.SampleAPITests')
+data.setCell(1, 3, 1041);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 seconds</span>
+              <span class="suite-total-time">Total running time: 4 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -222,22 +239,34 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.UITest.tests.LoginTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.APITest.tests.SampleAPITests</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">beforSuite</span>
+                <span class="method-name">setAPITestConfig</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
-                <span class="method-name">beforeMethod(null)</span>
-                <span class="method-start">93 ms</span>
+                <span class="method-name">getRestCallConfig</span>
+                <span class="method-start">42 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">loginTest(automationtest@sumoscheduler.com, mypassword1)</span>
-                <span class="method-start">5795 ms</span>
+                <span class="method-name">s200_Get_PComments</span>
+                <span class="method-start">42 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=loginTest status=SUCCESS method=LoginTest.loginTest(java.lang.String, java.lang.Str...)</span>
-                <span class="method-start">12957 ms</span>
+                <span class="method-name">afterMethod([TestResult name=s200_Get_PComments status=SUCCESS method=SampleAPITests.s200_Get_PComments()[pri:0,...)</span>
+                <span class="method-start">3881 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">getRestCallConfig</span>
+                <span class="method-start">3888 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">s200_Get_WeatherInfoByZipcode</span>
+                <span class="method-start">3889 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=s200_Get_WeatherInfoByZipcode status=SUCCESS method=SampleAPITests.s200_Get_Weather...)</span>
+                <span class="method-start">4946 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
