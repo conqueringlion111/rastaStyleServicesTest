@@ -2,6 +2,7 @@ package com.AutomationTest.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
@@ -19,8 +20,9 @@ public class HomePage extends PageBase {
 	
 	public HomePage verifySuccessfulLogin() throws InterruptedException {
 		
+		WebElement topMainMenuBar = driver.findElement(By.cssSelector(".bBottom .slds-context-bar"));
 		try {
-			wait.waitForElementByCssSel(".bBottom .slds-context-bar");
+			wait.waitForVisibOfWebElement(topMainMenuBar, 15);
 		}catch(Exception e) {
 			System.out.println("Error waiting for top main menu bar");
 			Thread.sleep(1500);

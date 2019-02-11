@@ -1,53 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13688" started-at="2019-01-20T16:14:23Z" finished-at="2019-01-20T16:14:37Z">
+  <suite name="Default suite" duration-ms="4932" started-at="2019-02-09T13:52:01Z" finished-at="2019-02-09T13:52:06Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="13688" started-at="2019-01-20T16:14:23Z" finished-at="2019-01-20T16:14:37Z">
-      <class name="com.UITest.tests.LoginTest">
-        <test-method status="PASS" signature="beforSuite()[pri:0, instance:com.UITest.tests.LoginTest@5649fd9b]" name="beforSuite" is-config="true" duration-ms="19" started-at="2019-01-20T16:14:23Z" finished-at="2019-01-20T16:14:23Z">
+    <test name="Default test" duration-ms="4932" started-at="2019-02-09T13:52:01Z" finished-at="2019-02-09T13:52:06Z">
+      <class name="com.APITest.tests.SampleAPITests">
+        <test-method status="PASS" signature="setAPITestConfig()[pri:0, instance:com.APITest.tests.SampleAPITests@ff5b51f]" name="setAPITestConfig" is-config="true" duration-ms="17" started-at="2019-02-09T13:52:01Z" finished-at="2019-02-09T13:52:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforSuite -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.String)[pri:0, instance:com.UITest.tests.LoginTest@5649fd9b]" name="beforeMethod" is-config="true" duration-ms="5702" started-at="2019-01-20T16:14:23Z" finished-at="2019-01-20T16:14:29Z">
-          <params>
-            <param index="0">
-              <value is-null="true"/>
-            </param>
-          </params>
+        </test-method> <!-- setAPITestConfig -->
+        <test-method status="PASS" signature="s200_Get_PComments()[pri:0, instance:com.APITest.tests.SampleAPITests@ff5b51f]" name="s200_Get_PComments" duration-ms="3710" started-at="2019-02-09T13:52:01Z" description="simple get call to test this framework" finished-at="2019-02-09T13:52:05Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="loginTest(java.lang.String, java.lang.String)[pri:0, instance:com.UITest.tests.LoginTest@5649fd9b]" name="loginTest" duration-ms="7158" started-at="2019-01-20T16:14:29Z" description="simple test to assert successful login" data-provider="dataProvider" finished-at="2019-01-20T16:14:36Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[automationtest@sumoscheduler.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[mypassword1]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- s200_Get_PComments -->
+        <test-method status="PASS" signature="getRestCallConfig()[pri:0, instance:com.APITest.tests.SampleAPITests@ff5b51f]" name="getRestCallConfig" is-config="true" duration-ms="0" started-at="2019-02-09T13:52:01Z" finished-at="2019-02-09T13:52:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.UITest.tests.LoginTest@5649fd9b]" name="afterMethod" is-config="true" duration-ms="750" started-at="2019-01-20T16:14:36Z" finished-at="2019-01-20T16:14:37Z">
+        </test-method> <!-- getRestCallConfig -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.APITest.tests.SampleAPITests@ff5b51f]" name="afterMethod" is-config="true" duration-ms="6" started-at="2019-02-09T13:52:05Z" finished-at="2019-02-09T13:52:05Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=loginTest status=SUCCESS method=LoginTest.loginTest(java.lang.String, java.lang.String)[pri:0, instance:com.UITest.tests.LoginTest@5649fd9b] output={null}]]]>
+                <![CDATA[[TestResult name=s200_Get_PComments status=SUCCESS method=SampleAPITests.s200_Get_PComments()[pri:0, instance:com.APITest.tests.SampleAPITests@ff5b51f] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- com.UITest.tests.LoginTest -->
+        <test-method status="PASS" signature="getRestCallConfig()[pri:0, instance:com.APITest.tests.SampleAPITests@ff5b51f]" name="getRestCallConfig" is-config="true" duration-ms="1" started-at="2019-02-09T13:52:05Z" finished-at="2019-02-09T13:52:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getRestCallConfig -->
+        <test-method status="PASS" signature="s200_Get_WeatherInfoByZipcode()[pri:0, instance:com.APITest.tests.SampleAPITests@ff5b51f]" name="s200_Get_WeatherInfoByZipcode" duration-ms="1041" started-at="2019-02-09T13:52:05Z" description="simple get call to validate the required fields are included in the response body" finished-at="2019-02-09T13:52:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- s200_Get_WeatherInfoByZipcode -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.APITest.tests.SampleAPITests@ff5b51f]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-02-09T13:52:06Z" finished-at="2019-02-09T13:52:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=s200_Get_WeatherInfoByZipcode status=SUCCESS method=SampleAPITests.s200_Get_WeatherInfoByZipcode()[pri:0, instance:com.APITest.tests.SampleAPITests@ff5b51f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.APITest.tests.SampleAPITests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

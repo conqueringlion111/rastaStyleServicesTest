@@ -2,6 +2,7 @@ package com.AutomationTest.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.AutomationTestHelper.helper.Waits;
@@ -19,21 +20,27 @@ public class LoginPage extends PageBase {
 	
 	public HomePage login(String username, String password) throws InterruptedException
 	{
+		WebElement loginForm = driver.findElement(By.xpath("//div[@id='content']/div[3]"));
+		WebElement userNameField = driver.findElement(By.id("username"));		
+		By userNmField = By.id("username");
+		WebElement pwField = driver.findElement(By.id("password"));
+		By pwFieldBy = By.id("password");
+		WebElement loginBtn = driver.findElement(By.id("Login"));
 		try {
-		wait.waitForElementByXPath("//div[@id='content']/div[3]");
+		wait.waitForVisibOfWebElement(loginForm, 15);
 		} catch(Exception e) {
 			System.out.println("error waiting for login form div, refreshing the page");
 			driver.navigate().refresh();
-			Thread.sleep(1500);
-			wait.waitForElementByXPath("//div[@id='content']/div[3]");
+			Thread.sleep(1000);
+			wait.waitForVisibOfWebElement(loginForm, 15);
 		}
-		wait.waitForPresenseElementByID("username");
+		wait.waitForPresenseOfWebElementBy(userNmField);
 		driver.findElement(By.id("username")).clear();
 		driver.findElement(By.id("username")).sendKeys(username);
-		wait.waitForPresenseElementByID("password");
+		wait.waitForPresenseOfWebElementBy(pwFieldBy);
 		driver.findElement(By.id("password")).clear();
 		driver.findElement(By.id("password")).sendKeys(password);
-		wait.waitForPresenseElementByID("Login");
+		wait.waitForVisibOfWebElement(loginBtn, 15);
 		try {
 		 driver.findElement(By.id("Login")).click();
 		 Thread.sleep(2500);
