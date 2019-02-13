@@ -54,10 +54,10 @@ public class JsonReader {
 	        	
 	             for (Map.Entry<String, JsonElement> entry : jsonElement.getAsJsonObject().entrySet()) {
 	            	 
-	            	 dataSet[i][j] = entry.getValue().toString().replace("\"","");
+	            	 dataSet[i][j] = entry.getValue().getAsString();
 	                 j++;   
 	            }
-	             
+             
 	            i++;
 	            j = 0;
 	            
