@@ -77,6 +77,17 @@ public class ValidationHelper extends PageBase {
 		}
 	}
 	
+	/**
+	 * method to verify WebElement located by By param is displayed
+	 * @param byLocVal
+	 * @param errMsg
+	 * @param successMsg
+	 */
+	public void verifyElementVisible(By byLocVal, String errMsg, String successMsg) {
+		Assert.assertTrue(driver.findElement(byLocVal).isDisplayed(), errMsg);
+		System.out.println(successMsg + " --> Assertion Passed!");
+	}
+	
 	
 
 }

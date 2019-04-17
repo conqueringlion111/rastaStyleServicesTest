@@ -43,18 +43,13 @@ public class WebDriverHelper {
 					else if(browserRemote.equalsIgnoreCase("chromeRemote")) {
 						
 						System.out.println("Opening Chrome Driver");
-						
-						Class<? extends WebDriver> driverClass = ChromeDriver.class;
-						WebDriverManager.getInstance(driverClass).setup();
-						driver = driverClass.newInstance();
-						
-						//WebDriverManager.chromedriver().setup();				
-					 	DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-			            ChromeOptions options = new ChromeOptions();
-			            capabilities.setCapability(CapabilityType.ForSeleniumServer.ENSURING_CLEAN_SESSION, true);
-			            options.addArguments("--window-size=1560,1070");
-			            capabilities.setCapability(ChromeOptions.CAPABILITY, options);		            
-			            driver = new ChromeDriver(capabilities);
+						WebDriverManager.chromedriver().setup();
+						DesiredCapabilities capability = DesiredCapabilities.chrome();
+						ChromeOptions options = new ChromeOptions();
+						capability.setBrowserName("chrome");
+						options.addArguments("--window-size=1560,1070");
+						capability.setPlatform(Platform.ANY);
+						driver = new ChromeDriver(options);
 						
 					}
 					else if(browserRemote.equalsIgnoreCase("chromeRemoteHeadless")) {
@@ -67,7 +62,7 @@ public class WebDriverHelper {
 			            options.addArguments("--headless");	
 			            options.addArguments("--window-size=1840,990");
 			            capabilities.setCapability(ChromeOptions.CAPABILITY, options);		            
-			            driver = new ChromeDriver(capabilities);
+			            driver = new ChromeDriver(options);
 						
 					}
 					else if(browserRemote.equalsIgnoreCase("firefoxRemote")) {
@@ -77,7 +72,7 @@ public class WebDriverHelper {
 					    capabilities.setCapability("marionette",true);
 					    FirefoxOptions options = new FirefoxOptions();
 					    options.addArguments("--window-size=1560,1070");
-						driver = new FirefoxDriver(capabilities);
+						driver = new FirefoxDriver(options);
 						
 					}
 					

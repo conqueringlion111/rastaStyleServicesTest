@@ -27,11 +27,11 @@ import io.restassured.response.Response;
 
 public class SampleAPITests extends APITestBase {
 	
-	public String postCommentsPath = "/posts/1/comments";
-	public String weatherInfoPath = "/data/2.5/weather";
-	public String weatherParm1 = "zip";
-	public String weatherParmVal1 = "30044";
-	public String userIDPath = "/posts";
+	public final String postCommentsPath = "/posts/1/comments";
+	public final String weatherInfoPath = "/data/2.5/weather";
+	public final String weatherParm1 = "zip";
+	public final String weatherParmVal1 = "30044";
+	public final String userIDPath = "/posts";
 	
 	
 	/*

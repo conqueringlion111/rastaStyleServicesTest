@@ -1,5 +1,6 @@
 package com.AutomationTest.util;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -10,11 +11,7 @@ public class CommonSeleniumActions extends PageBase {
 	public CommonSeleniumActions(WebDriver driver) {
 		super(driver);
 	}
-	
-	/*
-	 * These may not be helpful and redundant but experimenting to see if this helps
-	 */
-	
+		
 	public void selClick(WebElement webElemLoc) {
 		webElemLoc.click();
 	}
@@ -25,6 +22,14 @@ public class CommonSeleniumActions extends PageBase {
 	
 	public void selSendKeys(WebElement webElemLoc, String inputStr) {
 		webElemLoc.sendKeys(inputStr);
+	}
+	/**
+	 * method to create WebElement with By param
+	 * @param byLocVal
+	 * @return
+	 */
+	public WebElement getWebElement(By byLocVal) {
+		return driver.findElement(byLocVal);
 	}
 
 }
