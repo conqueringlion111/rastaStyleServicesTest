@@ -5,7 +5,16 @@
 			"username"			:			"automationtest@sumoscheduler.com",
 			"password"			:			"mypassword1"
 		}
-	],	
+	],
+	"logInV2"	:
+	[
+		{
+			"username"			:			"automationtest@sumoscheduler.com",
+			"password"			:			"mypassword1",
+			"errMsg"			:			"Menu bar is not available. Login is not successful!",
+			"successMsg"		:			"The menu bar has displayed, login is successful"
+		}
+	],
 	"verifyNewAppointmentCanBeCreatedSuccessfully"	:
 	[
 		{

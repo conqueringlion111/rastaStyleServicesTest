@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Rastamon\AppData\Local\Temp\testng-eclipse-1876308802\testng-customsuite.xml</span>
+                    <span>C:\Users\Rastamon\AppData\Local\Temp\testng-eclipse--75222729\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,12 +102,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.APITest.tests.SamplePostRequest" hash-for-method="s200_RegisterTokenReturned(token)">s200_RegisterTokenReturned(token)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.APITest.tests.SamplePostRequest" hash-for-method="s400_MissingEmailField_ErrorReturned(Missing password)">s400_MissingEmailField_ErrorReturned(Missing password)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.UITest.tests.LogInTestV2" hash-for-method="logInV2(automationtest@sumoscheduler.com, mypassword1, Menu bar is not available. Login is not successful!, ...)">logInV2(automationtest@sumoscheduler.com, mypassword1, Menu bar is not available. Login is not successful!, ...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -125,27 +120,17 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.APITest.tests.SamplePostRequest</span>
+              <span class="class-name">com.UITest.tests.LogInTestV2</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="s200_RegisterTokenReturned(token)">
-                  </a> <!-- s200_RegisterTokenReturned(token) -->
-                  <span class="method-name">s200_RegisterTokenReturned</span>
-                  <span class="parameters">(token)</span>
+                  <a name="logInV2(automationtest@sumoscheduler.com, mypassword1, Menu bar is not available. Login is not successful!, ...)">
+                  </a> <!-- logInV2(automationtest@sumoscheduler.com, mypassword1, Menu bar is not available. Login is not successful!, ...) -->
+                  <span class="method-name">logInV2</span>
+                  <span class="parameters">(automationtest@sumoscheduler.com, mypassword1, Menu bar is not available. Login is not successful!, The menu bar has displayed, login is successful)</span>
                   <em>
-(simple post call to test this framework)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="s400_MissingEmailField_ErrorReturned(Missing password)">
-                  </a> <!-- s400_MissingEmailField_ErrorReturned(Missing password) -->
-                  <span class="method-name">s400_MissingEmailField_ErrorReturned</span>
-                  <span class="parameters">(Missing password)</span>
-                  <em>
-(testing error handling)                  </em>
+(test using getWebElement method from CommonSeleniumActions class )                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -153,7 +138,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Rastamon\AppData\Local\Temp\testng-eclipse-1876308802\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Rastamon\AppData\Local\Temp\testng-eclipse--75222729\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -162,7 +147,7 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.APITest.tests.SamplePostRequest&quot;/&gt;
+      &lt;class name=&quot;com.UITest.tests.LogInTestV2&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -202,20 +187,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 's200_RegisterTokenReturned')
-data.setCell(0, 2, 'com.APITest.tests.SamplePostRequest')
-data.setCell(0, 3, 3405);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 's400_MissingEmailField_ErrorReturned')
-data.setCell(1, 2, 'com.APITest.tests.SamplePostRequest')
-data.setCell(1, 3, 1131);
+data.setCell(0, 1, 'logInV2')
+data.setCell(0, 2, 'com.UITest.tests.LogInTestV2')
+data.setCell(0, 3, 7945);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 7 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -241,34 +222,22 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.APITest.tests.SamplePostRequest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.UITest.tests.LogInTestV2</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">setAPITestConfig</span>
+                <span class="method-name">beforSuite</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
-                <span class="method-name">getRestCallConfig</span>
-                <span class="method-start">106 ms</span>
+                <span class="method-name">beforeMethod(null)</span>
+                <span class="method-start">66 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">s200_RegisterTokenReturned(token)</span>
-                <span class="method-start">106 ms</span>
+                <span class="method-name">logInV2(automationtest@sumoscheduler.com, mypassword1, Menu bar is not available. Login is not successful!, ...)</span>
+                <span class="method-start">9676 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=s200_RegisterTokenReturned status=SUCCESS method=SamplePostRequest.s200_RegisterTok...)</span>
-                <span class="method-start">3518 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">getRestCallConfig</span>
-                <span class="method-start">3531 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">s400_MissingEmailField_ErrorReturned(Missing password)</span>
-                <span class="method-start">3531 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=s400_MissingEmailField_ErrorReturned status=SUCCESS method=SamplePostRequest.s400_M...)</span>
-                <span class="method-start">4664 ms</span>
+                <span class="method-name">afterMethod([TestResult name=logInV2 status=SUCCESS method=LogInTestV2.logInV2(java.lang.String, java.lang.Strin...)</span>
+                <span class="method-start">17623 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

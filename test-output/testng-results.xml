@@ -1,69 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4652" started-at="2019-02-13T21:49:56Z" finished-at="2019-02-13T21:50:01Z">
+  <suite name="Default suite" duration-ms="18878" started-at="2019-02-22T01:25:11Z" finished-at="2019-02-22T01:25:30Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4652" started-at="2019-02-13T21:49:56Z" finished-at="2019-02-13T21:50:01Z">
-      <class name="com.APITest.tests.SamplePostRequest">
-        <test-method status="PASS" signature="setAPITestConfig()[pri:0, instance:com.APITest.tests.SamplePostRequest@ff5b51f]" name="setAPITestConfig" is-config="true" duration-ms="21" started-at="2019-02-13T21:49:56Z" finished-at="2019-02-13T21:49:56Z">
+    <test name="Default test" duration-ms="18878" started-at="2019-02-22T01:25:11Z" finished-at="2019-02-22T01:25:30Z">
+      <class name="com.UITest.tests.LogInTestV2">
+        <test-method status="PASS" signature="beforSuite()[pri:0, instance:com.UITest.tests.LogInTestV2@5649fd9b]" name="beforSuite" is-config="true" duration-ms="13" started-at="2019-02-22T01:25:11Z" finished-at="2019-02-22T01:25:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setAPITestConfig -->
-        <test-method status="PASS" signature="getRestCallConfig()[pri:0, instance:com.APITest.tests.SamplePostRequest@ff5b51f]" name="getRestCallConfig" is-config="true" duration-ms="0" started-at="2019-02-13T21:49:56Z" finished-at="2019-02-13T21:49:56Z">
+        </test-method> <!-- beforSuite -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.String)[pri:0, instance:com.UITest.tests.LogInTestV2@5649fd9b]" name="beforeMethod" is-config="true" duration-ms="9610" started-at="2019-02-22T01:25:11Z" finished-at="2019-02-22T01:25:21Z">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getRestCallConfig -->
-        <test-method status="PASS" signature="s200_RegisterTokenReturned(java.lang.String)[pri:0, instance:com.APITest.tests.SamplePostRequest@ff5b51f]" name="s200_RegisterTokenReturned" duration-ms="3405" started-at="2019-02-13T21:49:56Z" description="simple post call to test this framework" data-provider="dataProvider" finished-at="2019-02-13T21:50:00Z">
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="logInV2(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.UITest.tests.LogInTestV2@5649fd9b]" name="logInV2" duration-ms="7945" started-at="2019-02-22T01:25:21Z" description="test using getWebElement method from CommonSeleniumActions class " data-provider="dataProvider" finished-at="2019-02-22T01:25:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[token]]>
+                <![CDATA[automationtest@sumoscheduler.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mypassword1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Menu bar is not available. Login is not successful!]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[The menu bar has displayed, login is successful]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- s200_RegisterTokenReturned -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.APITest.tests.SamplePostRequest@ff5b51f]" name="afterMethod" is-config="true" duration-ms="11" started-at="2019-02-13T21:50:00Z" finished-at="2019-02-13T21:50:00Z">
+        </test-method> <!-- logInV2 -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.UITest.tests.LogInTestV2@5649fd9b]" name="afterMethod" is-config="true" duration-ms="1268" started-at="2019-02-22T01:25:29Z" finished-at="2019-02-22T01:25:30Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=s200_RegisterTokenReturned status=SUCCESS method=SamplePostRequest.s200_RegisterTokenReturned(java.lang.String)[pri:0, instance:com.APITest.tests.SamplePostRequest@ff5b51f] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="getRestCallConfig()[pri:0, instance:com.APITest.tests.SamplePostRequest@ff5b51f]" name="getRestCallConfig" is-config="true" duration-ms="0" started-at="2019-02-13T21:50:00Z" finished-at="2019-02-13T21:50:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getRestCallConfig -->
-        <test-method status="PASS" signature="s400_MissingEmailField_ErrorReturned(java.lang.String)[pri:0, instance:com.APITest.tests.SamplePostRequest@ff5b51f]" name="s400_MissingEmailField_ErrorReturned" duration-ms="1131" started-at="2019-02-13T21:50:00Z" description="testing error handling" data-provider="dataProvider" finished-at="2019-02-13T21:50:01Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Missing password]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- s400_MissingEmailField_ErrorReturned -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.APITest.tests.SamplePostRequest@ff5b51f]" name="afterMethod" is-config="true" duration-ms="8" started-at="2019-02-13T21:50:01Z" finished-at="2019-02-13T21:50:01Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=s400_MissingEmailField_ErrorReturned status=SUCCESS method=SamplePostRequest.s400_MissingEmailField_ErrorReturned(java.lang.String)[pri:0, instance:com.APITest.tests.SamplePostRequest@ff5b51f] output={null}]]]>
+                <![CDATA[[TestResult name=logInV2 status=SUCCESS method=LogInTestV2.logInV2(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.UITest.tests.LogInTestV2@5649fd9b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- com.APITest.tests.SamplePostRequest -->
+      </class> <!-- com.UITest.tests.LogInTestV2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -53,5 +53,9 @@ public class LoginPage extends PageBase {
 		return new HomePage(driver);
 		
 	}
+	
+	public void startText(){
+		System.out.println("starting test");
+	}
 
 }
