@@ -1,6 +1,12 @@
-/target/
-/ant_build
-/test-output
-/bin
+*target/
+*test-output/
+*.settings
 *.png
-/ant_reports
+*debug.log
+*.project
+*.classpath
+/bin
+/Logs
+*.idea/
+*.iml
+

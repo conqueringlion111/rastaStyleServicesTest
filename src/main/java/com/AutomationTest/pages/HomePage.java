@@ -1,13 +1,11 @@
 package com.AutomationTest.pages;
 
+import com.AutomationTestHelper.helper.Waits;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-
-import com.AutomationTestHelper.helper.Waits;
-import com.AutomationTest.pages.HomePage;
 
 public class HomePage extends PageBase {
 	
