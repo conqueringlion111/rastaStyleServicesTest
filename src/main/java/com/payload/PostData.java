@@ -1,4 +1,4 @@
-package com.APITest.data;
+package com.payload;
 
 public class PostData {
 	

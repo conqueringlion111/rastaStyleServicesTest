@@ -3,10 +3,9 @@ package com.APITest.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.APITest.data.PostDataRandom;
+import com.payload.PostDataRandom;
 
 import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;

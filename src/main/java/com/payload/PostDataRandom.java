@@ -1,4 +1,4 @@
-package com.APITest.data;
+package com.payload;
 
 import java.util.Collections;
 import java.util.HashMap;

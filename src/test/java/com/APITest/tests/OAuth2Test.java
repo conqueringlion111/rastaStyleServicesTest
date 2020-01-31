@@ -2,7 +2,7 @@ package com.APITest.tests;
 
 import org.testng.annotations.Test;
 
-import com.APITest.data.PostData;
+import com.payload.PostData;
 
 import io.restassured.response.Response;
 

@@ -6,7 +6,7 @@ import com.framewerk.APITestBase;
 
 import static io.restassured.RestAssured.given;
 
-import com.APITest.data.PostSamplePostReqData;
+import com.payload.PostSamplePostReqData;
 
 import static org.hamcrest.Matchers.*;
 import io.restassured.http.ContentType;
