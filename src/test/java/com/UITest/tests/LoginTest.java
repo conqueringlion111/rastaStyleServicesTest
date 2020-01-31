@@ -2,7 +2,7 @@ package com.UITest.tests;
 
 import org.testng.annotations.Test;
 
-import com.UITest.testbase.TestBase;
+import com.framewerk.TestBase;
 
 public class LoginTest extends TestBase {
 	

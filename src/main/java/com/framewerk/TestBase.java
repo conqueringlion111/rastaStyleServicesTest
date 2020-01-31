@@ -1,4 +1,15 @@
-package com.UITest.testbase;
+package com.framewerk;
+
+import com.AutomationTest.pages.LoginPage;
+import com.AutomationTest.util.JsonReader;
+import com.AutomationTest.util.WebDriverHelper;
+import com.AutomationTestHelper.helper.TestResultsTR;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,24 +19,6 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.text.ParseException;
 import java.util.Properties;
-
-import org.apache.commons.exec.OS;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-
-import com.AutomationTestHelper.helper.TestResultsTR;
-import com.AutomationTest.pages.LoginPage;
-import com.AutomationTest.util.JsonReader;
-import com.AutomationTest.util.WebDriverHelper;
 
 public class TestBase {
 	

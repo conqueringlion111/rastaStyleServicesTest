@@ -1,4 +1,16 @@
-package com.APITest.testbase;
+package com.framewerk;
+
+import com.AutomationTest.util.JsonReader;
+import com.AutomationTestHelper.helper.TestResultsTR;
+import com.appconstants.ApplicationConstants;
+import com.helper.OAuth2;
+import com.helper.TimeStamp;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.DataProvider;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -6,18 +18,15 @@ import java.lang.reflect.Method;
 import java.text.ParseException;
 import java.util.Properties;
 
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.DataProvider;
-
-import com.AutomationTestHelper.helper.TestResultsTR;
-import com.AutomationTest.util.JsonReader;
-
 public class APITestBase {
 	
 	protected static Properties apiTestConfig;
+	private String envURL;
+	protected static String baseURI = "";
+	protected static String authenticationBaseURI = "";
+	protected long accessTokenTimeStampMS;
+	private static final long EXPIRATION_TIME_LIMIT = 240000;
+
 	public String baseURLStaging;
 	public String baseURLProd;
 	public String baseURIReqres;
@@ -42,24 +51,39 @@ public class APITestBase {
 	public void setAPITestConfig() throws FileNotFoundException, IOException {
 		apiTestConfig = new Properties();
 		apiTestConfig.load(new FileInputStream("APITestConfig.properties"));
+		if(System.getProperty("target.env")!= null) {
+			envURL = System.getProperty("target.env");
+		}
+		else {
+			envURL = apiTestConfig.getProperty("baseURL");
+		}
+		baseURI = envURL;
+		authenticationBaseURI = apiTestConfig.getProperty("authenticationURI");
+		new OAuth2(ApplicationConstants.ATL_ACCT_MANAGER, ApplicationConstants.PASSWORD, ApplicationConstants.GRANT_TYPE,
+				ApplicationConstants.CLIENT_ID, ApplicationConstants.CLIENT_SECRET);
+		new TimeStamp();
+		accessTokenTimeStampMS = TimeStamp.getTimeStampMS();
+		baseURLStaging = apiTestConfig.getProperty("baseURLStaging");
+		baseURLProd = apiTestConfig.getProperty("baseURLProd");
+		baseURL = apiTestConfig.getProperty("baseURLStaging");
+		baseURIReqres = apiTestConfig.getProperty("baseReqresURI");
+		timeLimit = apiTestConfig.getProperty("timeLimit");
+		timeLimitLStr = apiTestConfig.getProperty("timeLimitL");
+		tileKey1Prod = apiTestConfig.getProperty("tileKey1Prod");
+		tileKey2Prod = apiTestConfig.getProperty("tileKey2Prod");
+		authorization = apiTestConfig.getProperty("authorization");
+		xAPIKey = apiTestConfig.getProperty("xAPIKey");
+		timeLimitInt = Integer.parseInt(timeLimit);
 	}
 
 	@BeforeMethod
 	
-	public void getRestCallConfig() {
-	baseURLStaging = apiTestConfig.getProperty("baseURLStaging");
-	baseURLProd = apiTestConfig.getProperty("baseURLProd");
-	baseURL = apiTestConfig.getProperty("baseURLStaging");
-	baseURIReqres = apiTestConfig.getProperty("baseReqresURI");
-	timeLimit = apiTestConfig.getProperty("timeLimit");
-	timeLimitLStr = apiTestConfig.getProperty("timeLimitL");
-	tileKey1Prod = apiTestConfig.getProperty("tileKey1Prod");
-	tileKey2Prod = apiTestConfig.getProperty("tileKey2Prod");
-	authorization = apiTestConfig.getProperty("authorization");
-	xAPIKey = apiTestConfig.getProperty("xAPIKey");
-	
-	timeLimitInt = Integer.parseInt(timeLimit);	
-	
+		public void verifyOAuth2ExpirationTime() {
+		if(TimeStamp.getTimeStampMS() - accessTokenTimeStampMS > EXPIRATION_TIME_LIMIT) {
+			accessTokenTimeStampMS = TimeStamp.getTimeStampMS();
+			new OAuth2(ApplicationConstants.ATL_ACCT_MANAGER, ApplicationConstants.PASSWORD, ApplicationConstants.GRANT_TYPE,
+					ApplicationConstants.CLIENT_ID, ApplicationConstants.CLIENT_SECRET);
+		}
 	}
 
 	@DataProvider(name = "dataProvider")
