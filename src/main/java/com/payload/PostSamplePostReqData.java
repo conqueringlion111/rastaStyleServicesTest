@@ -1,4 +1,4 @@
-package com.APITest.data;
+package com.payload;
 
 public class PostSamplePostReqData {
 	
@@ -6,10 +6,10 @@ public class PostSamplePostReqData {
 	 * Post body for samplePostReqest test
 	 */
 	
-	public final String s200_SamPostReqTokenReturned = 
+	public static final String s200_SamPostReqTokenReturned =
 			"{" +
-			"    \"email\": \"madLion@rasta.com\"," +
-			"    \"password\": \"rudebwoy\"" +
+			"    \"email\": \"eve.holt@reqres.in\"," +
+			"    \"password\": \"pistol\"" +
 			"}";
 	
 	
@@ -17,7 +17,7 @@ public class PostSamplePostReqData {
 	 * Post body for s400_PostBodyMissingPW_ErrorReturned test
 	 */
 	
-	public final String s400_MissingEmailField_ErrorReturned = 
+	public static final String s400_MissingEmailField_ErrorReturned =
 			"{" +
 			"	\"email\":	\"original@123\"" +
 			"}";
