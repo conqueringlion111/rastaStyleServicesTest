@@ -1,15 +1,14 @@
 package com.APITest.tests;
 
-import org.testng.annotations.Test;
-
 import com.framewerk.APITestBase;
-
 import io.restassured.response.Response;
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.containsString;
+import org.testng.annotations.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.containsString;
 
 public class LogIn_Auth_GetCookies_GET_VendInfo extends APITestBase {
 	
@@ -36,8 +35,7 @@ public class LogIn_Auth_GetCookies_GET_VendInfo extends APITestBase {
 				.assertThat().statusCode(302)
 				.log().all()
 				.extract()
-				.response()
-				;
+				.response();
 		
 		//get and set cookies - using set cookies doesn't work, will get cookie value from response.getCookie() directly****
 		myCookies = response.getCookies();

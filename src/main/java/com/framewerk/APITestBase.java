@@ -2,8 +2,6 @@ package com.framewerk;
 
 import com.AutomationTest.util.JsonReader;
 import com.AutomationTestHelper.helper.TestResultsTR;
-import com.appconstants.ApplicationConstants;
-import com.helper.OAuth2;
 import com.helper.TimeStamp;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -59,9 +57,9 @@ public class APITestBase {
 		}
 		baseURI = envURL;
 		authenticationBaseURI = apiTestConfig.getProperty("authenticationURI");
-		new OAuth2(ApplicationConstants.ATL_ACCT_MANAGER, ApplicationConstants.PASSWORD, ApplicationConstants.GRANT_TYPE,
-				ApplicationConstants.CLIENT_ID, ApplicationConstants.CLIENT_SECRET);
-		new TimeStamp();
+//		new OAuth2(ApplicationConstants.ATL_ACCT_MANAGER, ApplicationConstants.PASSWORD, ApplicationConstants.GRANT_TYPE,
+//				ApplicationConstants.CLIENT_ID, ApplicationConstants.CLIENT_SECRET);
+//		new TimeStamp();
 		accessTokenTimeStampMS = TimeStamp.getTimeStampMS();
 		baseURLStaging = apiTestConfig.getProperty("baseURLStaging");
 		baseURLProd = apiTestConfig.getProperty("baseURLProd");
@@ -80,9 +78,9 @@ public class APITestBase {
 	
 		public void verifyOAuth2ExpirationTime() {
 		if(TimeStamp.getTimeStampMS() - accessTokenTimeStampMS > EXPIRATION_TIME_LIMIT) {
-			accessTokenTimeStampMS = TimeStamp.getTimeStampMS();
-			new OAuth2(ApplicationConstants.ATL_ACCT_MANAGER, ApplicationConstants.PASSWORD, ApplicationConstants.GRANT_TYPE,
-					ApplicationConstants.CLIENT_ID, ApplicationConstants.CLIENT_SECRET);
+//			accessTokenTimeStampMS = TimeStamp.getTimeStampMS();
+//			new OAuth2(ApplicationConstants.ATL_ACCT_MANAGER, ApplicationConstants.PASSWORD, ApplicationConstants.GRANT_TYPE,
+//					ApplicationConstants.CLIENT_ID, ApplicationConstants.CLIENT_SECRET);
 		}
 	}
 

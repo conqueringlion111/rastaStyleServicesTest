@@ -1,14 +1,11 @@
 package com.APITest.tests;
 
+import com.payload.PostData;
+import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
-import com.payload.PostData;
-
-import io.restassured.response.Response;
-
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
-import io.restassured.http.ContentType;
 
 
 public class OAuth2Test {
@@ -26,17 +23,16 @@ public class OAuth2Test {
 		Response auth = 
 				given()
 				.relaxedHTTPSValidation()
-				.parameter("username","inspectorGadget@mycartoon.com")
-				.parameter("password","secret77")
-				.parameter("grant_type","password")
-				.parameter("client_id","client77")
-				.parameter("client_secret","wTNcCZFn8KWC0BzN63z4Ravz64xTizBo7iKOBCaZ")
+				.formParam("username","inspectorGadget@mycartoon.com")
+				.formParam("password","secret77")
+				.formParam("grant_type","password")
+				.formParam("client_id","client77")
+				.formParam("client_secret","wTNcCZFn8KWC0BzN63z4Ravz64xTizBo7iKOBCaZ")
 				.auth().preemptive().basic("amarvin@example.org", "test")
-				.then().expect().statusCode(200)
-				.and().time(lessThan(7000L))
 				.when().post(baseURI + oauth2Path)
-				.then().log().all()
-				.contentType(ContentType.JSON)
+				.then().assertThat().statusCode(200)
+				.and().time(lessThan(7000L))
+				.log().all()
 				.extract().response();
 		
 		Response response = 
@@ -45,8 +41,9 @@ public class OAuth2Test {
 				.relaxedHTTPSValidation()
 				.header("Content-Type","application/json")
 				.header("Accept", "application/json")
-				.body(myJson).with()
-				.then().expect().statusCode(422)
+				.body(myJson)
+				.when().post(baseURI + companyPath)
+				.then().assertThat().statusCode(422)
 				.body(containsString("message"))
 				.body(containsString("errors"))
 				.body("message", is("The given data was invalid."))
@@ -57,9 +54,7 @@ public class OAuth2Test {
 				.body("errors.shard_name[0]", is("The shard name must be a string."))
 				.body("errors.industry[0]", is("The industry must be a string."))
 				.and().time(lessThan(7000L))
-				.when().post(baseURI + companyPath)
-				.then().log().all()
-				.contentType(ContentType.JSON)
+				.log().all()
 				.extract()
 				.response();
 		

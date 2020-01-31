@@ -1,19 +1,15 @@
 package com.APITest.tests;
 
-import org.testng.annotations.Test;
-
 import com.framewerk.APITestBase;
-
-import static io.restassured.RestAssured.given;
+import io.restassured.response.Response;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import org.testng.Assert;
-
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 
 public class SampleAPITests extends APITestBase {
 	
@@ -49,7 +45,6 @@ public class SampleAPITests extends APITestBase {
 				.body("main", not(hasKey("turbo")))
 				.body("clouds.all", is(1), "name", is("Mountain View"))
 				.log().all()
-				.contentType(ContentType.JSON)
 				.extract()
 				.response();
 		
@@ -90,7 +85,6 @@ public class SampleAPITests extends APITestBase {
 				.body(containsString("id"))
 				.body("[2].email", is("Nikita@garfield.biz"), "[2].body", is("quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"))
 				.log().all()
-				.contentType(ContentType.JSON)
 				.extract()
 				.response();
 		

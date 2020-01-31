@@ -1,14 +1,13 @@
 package com.APITest.tests;
 
+import com.payload.PostDataRandom;
+import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.payload.PostDataRandom;
-
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 
 public class SampleAPITestUseRandomData {
 	
@@ -35,8 +34,9 @@ public class SampleAPITestUseRandomData {
 				.relaxedHTTPSValidation()
 				.header("Content-Type","application/json")
 				.header("Accept", "application/json")
-				.body(myJson).with()
-				.then().expect().statusCode(200)
+				.body(myJson)
+				.when().post(baseURI + companyPath)
+				.then().assertThat().statusCode(200)
 				.body(containsString("data"))
 				.body("data", hasKey("uuid"), "data", hasKey("company_name"), "data", hasKey("shard_name"))
 				.body("data", hasKey("industry"), "data", hasKey("account_manager"), "data", hasKey("contract_start_date"))
@@ -46,9 +46,7 @@ public class SampleAPITestUseRandomData {
 				.body("data.company_name", is(companyName))
 				.body("data.shard_name", is(shardName))
 				.and().time(lessThan(7000L))
-				.when().post(baseURI + companyPath)
-				.then().log().all()
-				.contentType(ContentType.JSON)
+				.log().all()
 				.extract()
 				.response();
 		
@@ -63,10 +61,10 @@ public class SampleAPITestUseRandomData {
 					.relaxedHTTPSValidation()
 					.header("Content-Type","application/json")
 					.header("Accept", "application/json")
-					.expect().statusCode(204)
-					.and().time(lessThan(7000L))
 					.when().delete(baseURI + companyPath+"/" + response.jsonPath().get("data.uuid").toString())
-					.then().log().all()
+					.then().assertThat().statusCode(204)
+					.and().time(lessThan(7000L))
+					.log().all()
 					.extract()
 					.response();
 			/*
@@ -83,7 +81,6 @@ public class SampleAPITestUseRandomData {
 					.assertThat().statusCode(200)
 					.and().time(lessThan(7000L))
 					.log().all()
-					.contentType(ContentType.JSON)
 					.extract()
 					.response();
 	
