@@ -7,7 +7,7 @@ import com.AutomationTest.locators.LoginPageLocators;
 import com.AutomationTest.util.CommonSeleniumActions;
 import com.AutomationTestHelper.helper.ValidationHelper;
 import com.AutomationTestHelper.helper.Waits;
-import com.UITest.testbase.TestBase;
+import com.framewerk.TestBase;
 
 public class LogInTestV2 extends TestBase {
 	

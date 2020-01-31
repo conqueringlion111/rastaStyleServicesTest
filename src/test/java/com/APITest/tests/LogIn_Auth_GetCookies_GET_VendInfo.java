@@ -2,7 +2,7 @@ package com.APITest.tests;
 
 import org.testng.annotations.Test;
 
-import com.APITest.testbase.APITestBase;
+import com.framewerk.APITestBase;
 
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;

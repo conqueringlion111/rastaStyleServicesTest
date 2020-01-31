@@ -5,18 +5,10 @@ import org.testng.annotations.Test;
 import com.APITest.data.PostData;
 
 import io.restassured.response.Response;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-
-import com.APITest.data.PostData;
-import com.APITest.testbase.APITestBase;
 
 import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-
 
 
 public class OAuth2Test {

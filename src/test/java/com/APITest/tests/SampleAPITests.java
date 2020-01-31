@@ -2,25 +2,15 @@ package com.APITest.tests;
 
 import org.testng.annotations.Test;
 
-import com.APITest.testbase.APITestBase;
+import com.framewerk.APITestBase;
 
 import static io.restassured.RestAssured.given;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Map;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
-import com.APITest.data.PostData;
-import com.APITest.testbase.APITestBase;
-
-import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
